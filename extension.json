@@ -11,33 +11,21 @@
 		"MediaWiki": ">= 1.32.0"
 	},
 	"AutoloadNamespaces": {
-		"MediaWiki\\Extension\\BoilerPlate\\": "includes/"
+		"MediaWiki\\Extension\\ConflictCases\\": "includes/"
 	},
 	"config": {
-		"BoilerPlateEnableFoo": {
-			"description": "Enable the Foo feature.",
+		"ConflictCasesEnable": {
+			"description": "Enable the ConflictCases merge handling.",
 			"value": true
 		}
 	},
 	"Hooks": {
-		"Something": "MediaWiki\\Extension\\BoilerPlate\\Hooks::onSomething"
+		"EditPage::threeWayMerge:after": "MediaWiki\\Extension\\ConflictCases\\Hooks::onMergeAfter"
 	},
 	"MessagesDirs": {
-		"BoilerPlate": [
+		"ConflictCases": [
 			"i18n"
 		]
-	},
-	"ResourceFileModulePaths": {
-		"localBasePath": "resources",
-		"remoteExtPath": "BoilerPlate/resources"
-	},
-	"ResourceModules": {
-		"ext.boilerPlate": {
-			"dependencies": [],
-			"messages": [],
-			"styles": [],
-			"scripts": []
-		}
 	},
 	"manifest_version": 2
 }
